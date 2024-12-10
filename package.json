@@ -1,6 +1,6 @@
 {
   "name": "tiptap-utility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "List of utils functions, helps to build custom extension and help working with tiptap editor",
   "main": "dist/index.js", 
   "types": "dist/index.d.ts",
@@ -14,10 +14,7 @@
   },
   "keywords": [
     "tiptap",
-    "tiptap",
-    "extensions",
-    "javascript",
-    "typescript"
+    "tiptap extension"
   ],
   "author": "Romik Makavana",
   "license": "ISC",
