@@ -15,6 +15,7 @@ npm install tiptap-utility
 - [isTextSelected](#istextselected)
 - [getWordCount](#getwordcount)
 - [getFocusedNodeContainer](#getfocusednodecontainer)
+- [getAllNodesOfType](#getallnodesoftype)
 
 ## `isTextSelected`
 
@@ -80,6 +81,33 @@ if (container) {
   console.log('No focused container found.');
 }
 ```
+---
+
+## `getAllNodesOfType`
+
+Retrieves all nodes of a specified type from the Tiptap editor document, including those nested within lists, tables, or other container nodes.
+
+#### Parameters:
+- **`editor`**: Tiptap `Editor` instance.
+- **`type`**: The target node type to locate (e.g., `'heading'`, `'paragraph'`).
+
+#### Returns:
+- **`Array<{ node: Node, pos: number }>`**:
+  - An array of objects where each object contains:
+    - **`node`**: The node instance of the specified type.
+    - **`pos`**: The position of the node in the document.
+
+#### Example:
+```typescript
+import { getAllNodesOfType } from 'tiptap-utility';
+
+const headings = getAllNodesOfType(editor, 'heading');
+headings.forEach(({ node, pos }) => {
+  console.log('Found heading:', node, 'at position:', pos);
+});
+```
+
+
 
 ## License
 
