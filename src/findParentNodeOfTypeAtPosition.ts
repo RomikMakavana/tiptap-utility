@@ -26,5 +26,13 @@ export function findParentNodeOfTypeAtPosition(editor: Editor, position: number,
         }
     }
 
+    // Special handling for position 0 (check the first child of the doc node)
+    if (position === 0) {
+        const firstChild = state.doc.firstChild;
+        if (firstChild && firstChild.type.name === parentNodeTypeName) {
+            return firstChild;
+        }
+    }
+    
     return null;
 }
