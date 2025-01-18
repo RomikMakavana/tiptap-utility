@@ -5,6 +5,7 @@ import getAllNodesOfType from './getAllNodesOfType';
 import getAllNodesByTypeAndAttrs from './getAllNodesByTypeAndAttrs';
 import { findParentNodeOfTypeAtPosition } from './findParentNodeOfTypeAtPosition';
 import { getEditorState } from './getEditorState';
+import { getNodesInRange } from './getNodesInRange';
 
 const TiptapUtility = {
     isTextSelected,
@@ -13,7 +14,8 @@ const TiptapUtility = {
     getWordCount,
     getAllNodesByTypeAndAttrs,
     findParentNodeOfTypeAtPosition,
-    getEditorState
+    getEditorState,
+    getNodesInRange
 }
 
 export {
@@ -23,6 +25,7 @@ export {
     getWordCount,
     getAllNodesByTypeAndAttrs,
     findParentNodeOfTypeAtPosition,
-    getEditorState
+    getEditorState,
+    getNodesInRange
 };
 export default TiptapUtility;

@@ -5,6 +5,7 @@ import getAllNodesOfType from './getAllNodesOfType';
 import getAllNodesByTypeAndAttrs from './getAllNodesByTypeAndAttrs';
 import { findParentNodeOfTypeAtPosition } from './findParentNodeOfTypeAtPosition';
 import { getEditorState } from './getEditorState';
+import { getNodesInRange } from './getNodesInRange';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -21,6 +22,7 @@ declare const TiptapUtility: {
     }[];
     findParentNodeOfTypeAtPosition: typeof findParentNodeOfTypeAtPosition;
     getEditorState: (editor: import("@tiptap/core").Editor) => import("prosemirror-state").EditorState;
+    getNodesInRange: typeof getNodesInRange;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange };
 export default TiptapUtility;

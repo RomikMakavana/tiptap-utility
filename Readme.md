@@ -19,6 +19,7 @@ npm install tiptap-utility
 - [getAllNodesByTypeAndAttrs](#getallnodesbytypeandattrs)
 - [findParentNodeOfTypeAtPosition](#getallnodesoftype)
 - [getEditorState](#geteditorstate)
+- [getNodesInRange](#getnodesinrange)
 
 ## `isTextSelected`
 
@@ -175,6 +176,38 @@ import { getEditorState } from 'tiptap-utility';
 const editorState = getEditorState({ editor });
 console.log(editorState);
 ```
+
+---
+## `getNodesInRange`
+
+Extracts all nodes within a specified range in the Tiptap editor document. Optionally, it can filter nodes by specified types.
+
+### Parameters
+- **`editor`** *(required)*: An instance of the Tiptap `Editor`.
+- **`from`** *(required)*: The starting position of the range (inclusive).
+- **`to`** *(required)*: The ending position of the range (exclusive).
+- **`nodeType`** *(optional)*: An array of node type names to filter for, or `null` to include all node types. Defaults to `null`.
+
+### Returns
+- **`NodeWithPosition[]`**: An array of objects, where each object contains:
+  - **`node`**: The ProseMirror `Node` instance.
+  - **`pos`**: The starting position of the node within the document.
+
+### Example
+```typescript
+import { getNodesInRange } from 'tiptap-utility';
+
+const from = 0;
+const to = 50;
+const nodeTypes = ['paragraph', 'heading'];
+
+const nodes = getNodesInRange(editor, from, to, nodeTypes);
+
+nodes.forEach(({ node, pos }) => {
+  console.log(`Node of type ${node.type.name} found at position ${pos}`);
+});
+```
+
 
 ## License
 

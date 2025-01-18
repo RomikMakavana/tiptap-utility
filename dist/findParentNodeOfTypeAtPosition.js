@@ -18,6 +18,7 @@ function findParentNodeOfTypeAtPosition(editor, position, parentNodeTypeName) {
             return {
                 node: currentNode,
                 depth,
+                pos: resolvedPos.pos,
                 start: resolvedPos.start(depth),
                 end: resolvedPos.end(depth),
             };
@@ -27,7 +28,13 @@ function findParentNodeOfTypeAtPosition(editor, position, parentNodeTypeName) {
     if (position === 0) {
         const firstChild = state.doc.firstChild;
         if (firstChild && firstChild.type.name === parentNodeTypeName) {
-            return firstChild;
+            return {
+                node: firstChild,
+                depth: 1,
+                pos: 0,
+                start: 1,
+                end: firstChild.nodeSize
+            };
         }
     }
     return null;
