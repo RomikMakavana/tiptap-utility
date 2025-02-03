@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
+exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
 const isTextSelected_1 = require("./isTextSelected");
 exports.isTextSelected = isTextSelected_1.default;
 const getWordCount_1 = require("./getWordCount");
@@ -17,6 +17,10 @@ const getEditorState_1 = require("./getEditorState");
 Object.defineProperty(exports, "getEditorState", { enumerable: true, get: function () { return getEditorState_1.getEditorState; } });
 const getNodesInRange_1 = require("./getNodesInRange");
 Object.defineProperty(exports, "getNodesInRange", { enumerable: true, get: function () { return getNodesInRange_1.getNodesInRange; } });
+const getLastChildNode_1 = require("./getLastChildNode");
+Object.defineProperty(exports, "getLastChildNode", { enumerable: true, get: function () { return getLastChildNode_1.getLastChildNode; } });
+const getNextSiblingNode_1 = require("./getNextSiblingNode");
+Object.defineProperty(exports, "getNextSiblingNode", { enumerable: true, get: function () { return getNextSiblingNode_1.getNextSiblingNode; } });
 const TiptapUtility = {
     isTextSelected: isTextSelected_1.default,
     getFocusedNodeContainer: getFocusedNodeContainer_1.default,
@@ -25,6 +29,8 @@ const TiptapUtility = {
     getAllNodesByTypeAndAttrs: getAllNodesByTypeAndAttrs_1.default,
     findParentNodeOfTypeAtPosition: findParentNodeOfTypeAtPosition_1.findParentNodeOfTypeAtPosition,
     getEditorState: getEditorState_1.getEditorState,
-    getNodesInRange: getNodesInRange_1.getNodesInRange
+    getNodesInRange: getNodesInRange_1.getNodesInRange,
+    getLastChildNode: getLastChildNode_1.getLastChildNode,
+    getNextSiblingNode: getNextSiblingNode_1.getNextSiblingNode
 };
 exports.default = TiptapUtility;

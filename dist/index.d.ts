@@ -6,6 +6,8 @@ import getAllNodesByTypeAndAttrs from './getAllNodesByTypeAndAttrs';
 import { findParentNodeOfTypeAtPosition } from './findParentNodeOfTypeAtPosition';
 import { getEditorState } from './getEditorState';
 import { getNodesInRange } from './getNodesInRange';
+import { getLastChildNode } from './getLastChildNode';
+import { getNextSiblingNode } from './getNextSiblingNode';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -23,6 +25,8 @@ declare const TiptapUtility: {
     findParentNodeOfTypeAtPosition: typeof findParentNodeOfTypeAtPosition;
     getEditorState: (editor: import("@tiptap/core").Editor) => import("prosemirror-state").EditorState;
     getNodesInRange: typeof getNodesInRange;
+    getLastChildNode: typeof getLastChildNode;
+    getNextSiblingNode: typeof getNextSiblingNode;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode };
 export default TiptapUtility;

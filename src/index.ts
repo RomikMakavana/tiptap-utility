@@ -6,6 +6,8 @@ import getAllNodesByTypeAndAttrs from './getAllNodesByTypeAndAttrs';
 import { findParentNodeOfTypeAtPosition } from './findParentNodeOfTypeAtPosition';
 import { getEditorState } from './getEditorState';
 import { getNodesInRange } from './getNodesInRange';
+import { getLastChildNode } from './getLastChildNode';
+import { getNextSiblingNode } from './getNextSiblingNode';
 
 const TiptapUtility = {
     isTextSelected,
@@ -15,7 +17,9 @@ const TiptapUtility = {
     getAllNodesByTypeAndAttrs,
     findParentNodeOfTypeAtPosition,
     getEditorState,
-    getNodesInRange
+    getNodesInRange,
+    getLastChildNode,
+    getNextSiblingNode
 }
 
 export {
@@ -26,6 +30,8 @@ export {
     getAllNodesByTypeAndAttrs,
     findParentNodeOfTypeAtPosition,
     getEditorState,
-    getNodesInRange
+    getNodesInRange,
+    getLastChildNode,
+    getNextSiblingNode
 };
 export default TiptapUtility;

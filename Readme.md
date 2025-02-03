@@ -20,6 +20,8 @@ npm install tiptap-utility
 - [findParentNodeOfTypeAtPosition](#getallnodesoftype)
 - [getEditorState](#geteditorstate)
 - [getNodesInRange](#getnodesinrange)
+- [getLastChildNode](#getlastchildnode)
+- [getNextSiblingNode](#getnextsiblingnode)
 
 ## `isTextSelected`
 
@@ -206,6 +208,70 @@ const nodes = getNodesInRange(editor, from, to, nodeTypes);
 nodes.forEach(({ node, pos }) => {
   console.log(`Node of type ${node.type.name} found at position ${pos}`);
 });
+```
+
+---
+## `getLastChildNode`
+
+Retrieves the last child node of a given node along with its starting position.
+
+### Parameters
+- **`node`** *(required)*: A ProseMirror `Node` from which to find the last child.
+
+### Returns
+- **`{ node: Node, pos: number } | null`**:  
+  - If the node has child nodes, returns an object containing:
+    - **`node`**: The last child `Node`.
+    - **`pos`**: The starting position of the last child node.
+  - Returns `null` if the node has no children.
+
+### Example
+```typescript
+import { getLastChildNode } from 'tiptap-utility';
+
+const parentNode = editor.state.doc.nodeAt(0); // Example parent node
+
+if (parentNode) {
+  const lastChild = getLastChildNode(parentNode);
+  if (lastChild) {
+    console.log(`Last child node type: ${lastChild.node.type.name}`);
+    console.log(`Position: ${lastChild.pos}`);
+  } else {
+    console.log('No child nodes found.');
+  }
+}
+```
+
+---
+## `getNextSiblingNode`
+
+Finds the next sibling node of a given node within its parent.
+
+### Parameters
+- **`parent`** *(required)*: A ProseMirror `Node` representing the parent container.
+- **`currentNode`** *(required)*: The child node whose next sibling needs to be found.
+
+### Returns
+- **`{ node: Node } | null`**:  
+  - If a next sibling exists, returns an object containing:
+    - **`node`**: The next sibling `Node`.
+  - Returns `null` if there is no next sibling.
+
+### Example
+```typescript
+import { getNextSiblingNode } from 'tiptap-utility';
+
+const parentNode = editor.state.doc.nodeAt(0); // Example parent node
+const currentNode = parentNode?.firstChild; // Example current node
+
+if (parentNode && currentNode) {
+  const nextSibling = getNextSiblingNode(parentNode, currentNode);
+  if (nextSibling) {
+    console.log(`Next sibling node type: ${nextSibling.node.type.name}`);
+  } else {
+    console.log('No next sibling found.');
+  }
+}
 ```
 
 
