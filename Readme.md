@@ -17,6 +17,7 @@ npm install tiptap-utility
 - [getFocusedNodeContainer](#getfocusednodecontainer)
 - [getAllNodesOfType](#getallnodesoftype)
 - [getAllNodesByTypeAndAttrs](#getallnodesbytypeandattrs)
+- [getAllMarksByTypeAndAttrs](#getallmarksbytypeandattrs)
 - [findParentNodeOfTypeAtPosition](#getallnodesoftype)
 - [getEditorState](#geteditorstate)
 - [getNodesInRange](#getnodesinrange)
@@ -135,7 +136,43 @@ const nodes = getAllNodesByTypeAndAttrs({ editor }, 'image', { src: 'https://exa
 console.log(nodes);
 ```
 
---- 
+---
+
+### `getAllMarksByTypeAndAttrs`
+
+Finds all marks of a given type and with specific attributes in the Tiptap editor's document.
+
+#### Parameters:
+- **`editor`**: Tiptap `Editor` instance.
+- **`markTypeName`**: A string representing the type of mark to search for (e.g., `'bold'`, `'italic'`, `'link'`).
+- **`attrs`**: An object containing the attributes to match against the marks.
+- **`match`** *(optional)*: The matching strategy - `'and'` (default) requires all attributes to match, `'or'` requires at least one attribute to match.
+
+#### Returns:
+- **`Array<{ from: number; to: number; attrs: any }>`**: An array of objects where each object contains:
+  - **`from`**: The starting position of the marked text.
+  - **`to`**: The ending position of the marked text.
+  - **`attrs`**: The attributes of the mark.
+
+#### Example:
+```typescript
+import { getAllMarksByTypeAndAttrs } from 'tiptap-utility';
+
+// Find all bold marks
+const boldMarks = getAllMarksByTypeAndAttrs(editor, 'bold', {});
+console.log(boldMarks);
+
+// Find all link marks with specific href
+const linkMarks = getAllMarksByTypeAndAttrs(editor, 'link', { href: 'https://example.com' });
+console.log(linkMarks);
+
+// Find marks where any of the specified attributes match (using 'or' strategy)
+const colorMarks = getAllMarksByTypeAndAttrs(editor, 'textStyle', { color: '#ff0000' }, 'or');
+console.log(colorMarks);
+```
+
+---
+
 ### `findParentNodeOfTypeAtPosition`
 
 Finds the parent node of a given type at a specific position in the Tiptap editor.
