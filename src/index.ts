@@ -8,6 +8,7 @@ import { getEditorState } from './getEditorState';
 import { getNodesInRange } from './getNodesInRange';
 import { getLastChildNode } from './getLastChildNode';
 import { getNextSiblingNode } from './getNextSiblingNode';
+import { getAllMarksByTypeAndAttrs } from './getAllMarksByTypeAndAttrs';
 
 const TiptapUtility = {
     isTextSelected,
@@ -19,7 +20,8 @@ const TiptapUtility = {
     getEditorState,
     getNodesInRange,
     getLastChildNode,
-    getNextSiblingNode
+    getNextSiblingNode,
+    getAllMarksByTypeAndAttrs
 }
 
 export {
@@ -32,6 +34,7 @@ export {
     getEditorState,
     getNodesInRange,
     getLastChildNode,
-    getNextSiblingNode
+    getNextSiblingNode,
+    getAllMarksByTypeAndAttrs
 };
 export default TiptapUtility;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
+exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
 const isTextSelected_1 = require("./isTextSelected");
 exports.isTextSelected = isTextSelected_1.default;
 const getWordCount_1 = require("./getWordCount");
@@ -21,6 +21,8 @@ const getLastChildNode_1 = require("./getLastChildNode");
 Object.defineProperty(exports, "getLastChildNode", { enumerable: true, get: function () { return getLastChildNode_1.getLastChildNode; } });
 const getNextSiblingNode_1 = require("./getNextSiblingNode");
 Object.defineProperty(exports, "getNextSiblingNode", { enumerable: true, get: function () { return getNextSiblingNode_1.getNextSiblingNode; } });
+const getAllMarksByTypeAndAttrs_1 = require("./getAllMarksByTypeAndAttrs");
+Object.defineProperty(exports, "getAllMarksByTypeAndAttrs", { enumerable: true, get: function () { return getAllMarksByTypeAndAttrs_1.getAllMarksByTypeAndAttrs; } });
 const TiptapUtility = {
     isTextSelected: isTextSelected_1.default,
     getFocusedNodeContainer: getFocusedNodeContainer_1.default,
@@ -31,6 +33,7 @@ const TiptapUtility = {
     getEditorState: getEditorState_1.getEditorState,
     getNodesInRange: getNodesInRange_1.getNodesInRange,
     getLastChildNode: getLastChildNode_1.getLastChildNode,
-    getNextSiblingNode: getNextSiblingNode_1.getNextSiblingNode
+    getNextSiblingNode: getNextSiblingNode_1.getNextSiblingNode,
+    getAllMarksByTypeAndAttrs: getAllMarksByTypeAndAttrs_1.getAllMarksByTypeAndAttrs
 };
 exports.default = TiptapUtility;

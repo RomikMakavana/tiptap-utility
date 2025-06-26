@@ -8,6 +8,7 @@ import { getEditorState } from './getEditorState';
 import { getNodesInRange } from './getNodesInRange';
 import { getLastChildNode } from './getLastChildNode';
 import { getNextSiblingNode } from './getNextSiblingNode';
+import { getAllMarksByTypeAndAttrs } from './getAllMarksByTypeAndAttrs';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -27,6 +28,7 @@ declare const TiptapUtility: {
     getNodesInRange: typeof getNodesInRange;
     getLastChildNode: typeof getLastChildNode;
     getNextSiblingNode: typeof getNextSiblingNode;
+    getAllMarksByTypeAndAttrs: typeof getAllMarksByTypeAndAttrs;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs };
 export default TiptapUtility;
