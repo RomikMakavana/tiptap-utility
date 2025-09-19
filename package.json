@@ -1,9 +1,14 @@
 {
   "name": "tiptap-utility",
-  "version": "1.0.16",
+  "version": "1.0.19",
   "description": "List of utils functions, helps to build custom extension and help working with tiptap editor",
-  "main": "dist/index.js", 
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -23,10 +28,11 @@
     "url": "https://github.com/RomikMakavana/tiptap-utility/issues"
   },
   "homepage": "https://github.com/RomikMakavana/tiptap-utility#readme",
-  "dependencies": {
-    "@tiptap/core": "^2.10.3"
-  },
   "devDependencies": {
+    "@tiptap/core": "^2.26.1",
     "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0"
   }
 }

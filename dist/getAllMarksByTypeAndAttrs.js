@@ -1,28 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllMarksByTypeAndAttrs = getAllMarksByTypeAndAttrs;
-function getAllMarksByTypeAndAttrs(editor, markTypeName, attrs, match = 'and') {
+function getAllMarksByTypeAndAttrs(state, type, attrs = {}, match = 'and') {
     const results = [];
-    const { doc } = editor.state;
-    doc.descendants((node, pos) => {
-        if (!node.isText)
-            return true;
-        for (const mark of node.marks) {
-            if (mark.type.name !== markTypeName)
-                continue;
-            const matchedKeys = Object.keys(attrs).filter(key => mark.attrs?.[key] === attrs[key]);
-            const isMatch = match === 'and'
-                ? matchedKeys.length === Object.keys(attrs).length
-                : matchedKeys.length > 0;
-            if (isMatch) {
-                results.push({
-                    from: pos,
-                    to: pos + node.nodeSize,
-                    attrs: mark.attrs,
-                });
+    state.doc.descendants((node, pos) => {
+        node.marks.forEach(mark => {
+            if (typeof type == 'string' ? mark.type.name !== type : mark.type !== type)
+                return;
+            const keys = Object.keys(attrs);
+            if (keys.length > 0) {
+                const checks = keys.map(key => mark.attrs[key] === attrs[key]);
+                const isMatch = match === 'and'
+                    ? checks.every(Boolean)
+                    : checks.some(Boolean);
+                if (!isMatch)
+                    return;
             }
-        }
-        return true;
+            results.push({
+                from: pos,
+                to: pos + node.nodeSize,
+                mark,
+                attrs: mark.attrs
+            });
+        });
     });
     return results;
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
+exports.getMarksAtPos = exports.getNodeUsageCount = exports.removeNodesByNameAndAttrs = exports.replaceNodesWithTextByNameAndAttrs = exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
 const isTextSelected_1 = require("./isTextSelected");
 exports.isTextSelected = isTextSelected_1.default;
 const getWordCount_1 = require("./getWordCount");
@@ -23,6 +23,14 @@ const getNextSiblingNode_1 = require("./getNextSiblingNode");
 Object.defineProperty(exports, "getNextSiblingNode", { enumerable: true, get: function () { return getNextSiblingNode_1.getNextSiblingNode; } });
 const getAllMarksByTypeAndAttrs_1 = require("./getAllMarksByTypeAndAttrs");
 Object.defineProperty(exports, "getAllMarksByTypeAndAttrs", { enumerable: true, get: function () { return getAllMarksByTypeAndAttrs_1.getAllMarksByTypeAndAttrs; } });
+const replaceNodesWithTextByNameAndAttrs_1 = require("./replaceNodesWithTextByNameAndAttrs");
+Object.defineProperty(exports, "replaceNodesWithTextByNameAndAttrs", { enumerable: true, get: function () { return replaceNodesWithTextByNameAndAttrs_1.replaceNodesWithTextByNameAndAttrs; } });
+const removeNodesByNameAndAttrs_1 = require("./removeNodesByNameAndAttrs");
+Object.defineProperty(exports, "removeNodesByNameAndAttrs", { enumerable: true, get: function () { return removeNodesByNameAndAttrs_1.removeNodesByNameAndAttrs; } });
+const getNodeUsageCount_1 = require("./getNodeUsageCount");
+Object.defineProperty(exports, "getNodeUsageCount", { enumerable: true, get: function () { return getNodeUsageCount_1.getNodeUsageCount; } });
+const getMarksAtPos_1 = require("./getMarksAtPos");
+Object.defineProperty(exports, "getMarksAtPos", { enumerable: true, get: function () { return getMarksAtPos_1.getMarksAtPos; } });
 const TiptapUtility = {
     isTextSelected: isTextSelected_1.default,
     getFocusedNodeContainer: getFocusedNodeContainer_1.default,
@@ -34,6 +42,10 @@ const TiptapUtility = {
     getNodesInRange: getNodesInRange_1.getNodesInRange,
     getLastChildNode: getLastChildNode_1.getLastChildNode,
     getNextSiblingNode: getNextSiblingNode_1.getNextSiblingNode,
-    getAllMarksByTypeAndAttrs: getAllMarksByTypeAndAttrs_1.getAllMarksByTypeAndAttrs
+    getAllMarksByTypeAndAttrs: getAllMarksByTypeAndAttrs_1.getAllMarksByTypeAndAttrs,
+    replaceNodesWithTextByNameAndAttrs: replaceNodesWithTextByNameAndAttrs_1.replaceNodesWithTextByNameAndAttrs,
+    removeNodesByNameAndAttrs: removeNodesByNameAndAttrs_1.removeNodesByNameAndAttrs,
+    getNodeUsageCount: getNodeUsageCount_1.getNodeUsageCount,
+    getMarksAtPos: getMarksAtPos_1.getMarksAtPos
 };
 exports.default = TiptapUtility;

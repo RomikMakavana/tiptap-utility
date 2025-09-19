@@ -9,6 +9,10 @@ import { getNodesInRange } from './getNodesInRange';
 import { getLastChildNode } from './getLastChildNode';
 import { getNextSiblingNode } from './getNextSiblingNode';
 import { getAllMarksByTypeAndAttrs } from './getAllMarksByTypeAndAttrs';
+import { replaceNodesWithTextByNameAndAttrs } from './replaceNodesWithTextByNameAndAttrs';
+import { removeNodesByNameAndAttrs } from './removeNodesByNameAndAttrs';
+import { getNodeUsageCount } from './getNodeUsageCount';
+import { getMarksAtPos } from './getMarksAtPos';
 
 const TiptapUtility = {
     isTextSelected,
@@ -21,7 +25,11 @@ const TiptapUtility = {
     getNodesInRange,
     getLastChildNode,
     getNextSiblingNode,
-    getAllMarksByTypeAndAttrs
+    getAllMarksByTypeAndAttrs,
+    replaceNodesWithTextByNameAndAttrs,
+    removeNodesByNameAndAttrs,
+    getNodeUsageCount,
+    getMarksAtPos
 }
 
 export {
@@ -35,6 +43,10 @@ export {
     getNodesInRange,
     getLastChildNode,
     getNextSiblingNode,
-    getAllMarksByTypeAndAttrs
+    getAllMarksByTypeAndAttrs,
+    replaceNodesWithTextByNameAndAttrs,
+    removeNodesByNameAndAttrs,
+    getNodeUsageCount,
+    getMarksAtPos
 };
 export default TiptapUtility;

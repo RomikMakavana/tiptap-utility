@@ -9,6 +9,10 @@ import { getNodesInRange } from './getNodesInRange';
 import { getLastChildNode } from './getLastChildNode';
 import { getNextSiblingNode } from './getNextSiblingNode';
 import { getAllMarksByTypeAndAttrs } from './getAllMarksByTypeAndAttrs';
+import { replaceNodesWithTextByNameAndAttrs } from './replaceNodesWithTextByNameAndAttrs';
+import { removeNodesByNameAndAttrs } from './removeNodesByNameAndAttrs';
+import { getNodeUsageCount } from './getNodeUsageCount';
+import { getMarksAtPos } from './getMarksAtPos';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -29,6 +33,10 @@ declare const TiptapUtility: {
     getLastChildNode: typeof getLastChildNode;
     getNextSiblingNode: typeof getNextSiblingNode;
     getAllMarksByTypeAndAttrs: typeof getAllMarksByTypeAndAttrs;
+    replaceNodesWithTextByNameAndAttrs: (type: string, attrs: Record<string, any>, text: string, state: import("prosemirror-state").EditorState, dispatch: ((args?: any) => any) | undefined, tr: import("prosemirror-state").Transaction) => void;
+    removeNodesByNameAndAttrs: (type: string, attrs: Record<string, any>, state: import("prosemirror-state").EditorState, dispatch: ((args?: any) => any) | undefined, tr: import("prosemirror-state").Transaction) => void;
+    getNodeUsageCount: typeof getNodeUsageCount;
+    getMarksAtPos: typeof getMarksAtPos;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs, replaceNodesWithTextByNameAndAttrs, removeNodesByNameAndAttrs, getNodeUsageCount, getMarksAtPos };
 export default TiptapUtility;
