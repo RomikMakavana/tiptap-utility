@@ -13,6 +13,7 @@ import { replaceNodesWithTextByNameAndAttrs } from './replaceNodesWithTextByName
 import { removeNodesByNameAndAttrs } from './removeNodesByNameAndAttrs';
 import { getNodeUsageCount } from './getNodeUsageCount';
 import { getMarksAtPos } from './getMarksAtPos';
+import { getMarksBetween } from './getMarksBetween';
 
 const TiptapUtility = {
     isTextSelected,
@@ -29,7 +30,8 @@ const TiptapUtility = {
     replaceNodesWithTextByNameAndAttrs,
     removeNodesByNameAndAttrs,
     getNodeUsageCount,
-    getMarksAtPos
+    getMarksAtPos,
+    getMarksBetween
 }
 
 export {
@@ -47,6 +49,7 @@ export {
     replaceNodesWithTextByNameAndAttrs,
     removeNodesByNameAndAttrs,
     getNodeUsageCount,
-    getMarksAtPos
+    getMarksAtPos,
+    getMarksBetween
 };
 export default TiptapUtility;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMarksAtPos = exports.getNodeUsageCount = exports.removeNodesByNameAndAttrs = exports.replaceNodesWithTextByNameAndAttrs = exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
+exports.getMarksBetween = exports.getMarksAtPos = exports.getNodeUsageCount = exports.removeNodesByNameAndAttrs = exports.replaceNodesWithTextByNameAndAttrs = exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
 const isTextSelected_1 = require("./isTextSelected");
 exports.isTextSelected = isTextSelected_1.default;
 const getWordCount_1 = require("./getWordCount");
@@ -31,6 +31,8 @@ const getNodeUsageCount_1 = require("./getNodeUsageCount");
 Object.defineProperty(exports, "getNodeUsageCount", { enumerable: true, get: function () { return getNodeUsageCount_1.getNodeUsageCount; } });
 const getMarksAtPos_1 = require("./getMarksAtPos");
 Object.defineProperty(exports, "getMarksAtPos", { enumerable: true, get: function () { return getMarksAtPos_1.getMarksAtPos; } });
+const getMarksBetween_1 = require("./getMarksBetween");
+Object.defineProperty(exports, "getMarksBetween", { enumerable: true, get: function () { return getMarksBetween_1.getMarksBetween; } });
 const TiptapUtility = {
     isTextSelected: isTextSelected_1.default,
     getFocusedNodeContainer: getFocusedNodeContainer_1.default,
@@ -46,6 +48,7 @@ const TiptapUtility = {
     replaceNodesWithTextByNameAndAttrs: replaceNodesWithTextByNameAndAttrs_1.replaceNodesWithTextByNameAndAttrs,
     removeNodesByNameAndAttrs: removeNodesByNameAndAttrs_1.removeNodesByNameAndAttrs,
     getNodeUsageCount: getNodeUsageCount_1.getNodeUsageCount,
-    getMarksAtPos: getMarksAtPos_1.getMarksAtPos
+    getMarksAtPos: getMarksAtPos_1.getMarksAtPos,
+    getMarksBetween: getMarksBetween_1.getMarksBetween
 };
 exports.default = TiptapUtility;

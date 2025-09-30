@@ -13,6 +13,7 @@ import { replaceNodesWithTextByNameAndAttrs } from './replaceNodesWithTextByName
 import { removeNodesByNameAndAttrs } from './removeNodesByNameAndAttrs';
 import { getNodeUsageCount } from './getNodeUsageCount';
 import { getMarksAtPos } from './getMarksAtPos';
+import { getMarksBetween } from './getMarksBetween';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -37,6 +38,7 @@ declare const TiptapUtility: {
     removeNodesByNameAndAttrs: (type: string, attrs: Record<string, any>, state: import("prosemirror-state").EditorState, dispatch: ((args?: any) => any) | undefined, tr: import("prosemirror-state").Transaction) => void;
     getNodeUsageCount: typeof getNodeUsageCount;
     getMarksAtPos: typeof getMarksAtPos;
+    getMarksBetween: typeof getMarksBetween;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs, replaceNodesWithTextByNameAndAttrs, removeNodesByNameAndAttrs, getNodeUsageCount, getMarksAtPos };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs, replaceNodesWithTextByNameAndAttrs, removeNodesByNameAndAttrs, getNodeUsageCount, getMarksAtPos, getMarksBetween };
 export default TiptapUtility;
