@@ -14,6 +14,7 @@ import { removeNodesByNameAndAttrs } from './removeNodesByNameAndAttrs';
 import { getNodeUsageCount } from './getNodeUsageCount';
 import { getMarksAtPos } from './getMarksAtPos';
 import { getMarksBetween } from './getMarksBetween';
+import { findParentNodeWithChildrenAtPos } from './findParentNodeWithChildrenAtPos';
 declare const TiptapUtility: {
     isTextSelected: ({ editor }: {
         editor: import("@tiptap/core").Editor;
@@ -39,6 +40,7 @@ declare const TiptapUtility: {
     getNodeUsageCount: typeof getNodeUsageCount;
     getMarksAtPos: typeof getMarksAtPos;
     getMarksBetween: typeof getMarksBetween;
+    findParentNodeWithChildrenAtPos: typeof findParentNodeWithChildrenAtPos;
 };
-export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs, replaceNodesWithTextByNameAndAttrs, removeNodesByNameAndAttrs, getNodeUsageCount, getMarksAtPos, getMarksBetween };
+export { isTextSelected, getFocusedNodeContainer, getAllNodesOfType, getWordCount, getAllNodesByTypeAndAttrs, findParentNodeOfTypeAtPosition, getEditorState, getNodesInRange, getLastChildNode, getNextSiblingNode, getAllMarksByTypeAndAttrs, replaceNodesWithTextByNameAndAttrs, removeNodesByNameAndAttrs, getNodeUsageCount, getMarksAtPos, getMarksBetween, findParentNodeWithChildrenAtPos };
 export default TiptapUtility;

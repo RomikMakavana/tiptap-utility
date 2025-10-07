@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMarksBetween = exports.getMarksAtPos = exports.getNodeUsageCount = exports.removeNodesByNameAndAttrs = exports.replaceNodesWithTextByNameAndAttrs = exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
+exports.findParentNodeWithChildrenAtPos = exports.getMarksBetween = exports.getMarksAtPos = exports.getNodeUsageCount = exports.removeNodesByNameAndAttrs = exports.replaceNodesWithTextByNameAndAttrs = exports.getAllMarksByTypeAndAttrs = exports.getNextSiblingNode = exports.getLastChildNode = exports.getNodesInRange = exports.getEditorState = exports.findParentNodeOfTypeAtPosition = exports.getAllNodesByTypeAndAttrs = exports.getWordCount = exports.getAllNodesOfType = exports.getFocusedNodeContainer = exports.isTextSelected = void 0;
 const isTextSelected_1 = require("./isTextSelected");
 exports.isTextSelected = isTextSelected_1.default;
 const getWordCount_1 = require("./getWordCount");
@@ -33,6 +33,8 @@ const getMarksAtPos_1 = require("./getMarksAtPos");
 Object.defineProperty(exports, "getMarksAtPos", { enumerable: true, get: function () { return getMarksAtPos_1.getMarksAtPos; } });
 const getMarksBetween_1 = require("./getMarksBetween");
 Object.defineProperty(exports, "getMarksBetween", { enumerable: true, get: function () { return getMarksBetween_1.getMarksBetween; } });
+const findParentNodeWithChildrenAtPos_1 = require("./findParentNodeWithChildrenAtPos");
+Object.defineProperty(exports, "findParentNodeWithChildrenAtPos", { enumerable: true, get: function () { return findParentNodeWithChildrenAtPos_1.findParentNodeWithChildrenAtPos; } });
 const TiptapUtility = {
     isTextSelected: isTextSelected_1.default,
     getFocusedNodeContainer: getFocusedNodeContainer_1.default,
@@ -49,6 +51,7 @@ const TiptapUtility = {
     removeNodesByNameAndAttrs: removeNodesByNameAndAttrs_1.removeNodesByNameAndAttrs,
     getNodeUsageCount: getNodeUsageCount_1.getNodeUsageCount,
     getMarksAtPos: getMarksAtPos_1.getMarksAtPos,
-    getMarksBetween: getMarksBetween_1.getMarksBetween
+    getMarksBetween: getMarksBetween_1.getMarksBetween,
+    findParentNodeWithChildrenAtPos: findParentNodeWithChildrenAtPos_1.findParentNodeWithChildrenAtPos
 };
 exports.default = TiptapUtility;
