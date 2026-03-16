@@ -24,6 +24,7 @@ npm install tiptap-utility
 - [getLastChildNode](#getlastchildnode)
 - [getNextSiblingNode](#getnextsiblingnode)
 - [mapEachNode](#mapeachnode)
+- [filterEachNode](#filtereachnode)
 
 ## `isTextSelected`
 
@@ -345,6 +346,34 @@ mapEachNode(json, (node) => {
   return node;
 });
 console.log('Node types in document:', types);
+```
+
+---
+
+## `filterEachNode`
+
+Recursively traverses a Tiptap `JSONContent` node tree and returns a new tree containing only nodes that pass a predicate. Does not mutate the input. Useful for stripping certain node types (e.g. images, embeds) or building a reduced copy of the document.
+
+### Parameters
+- **`node`** *(required)*: A Tiptap `JSONContent` object (e.g. from `editor.getJSON()` or a single node).
+- **`predicate`** *(required)*: A function `(node: JSONContent) => boolean` called for each node that has a `type` property. Return `true` to keep the node (and its filtered subtree), `false` to remove it.
+
+### Returns
+- **`JSONContent | null`**: A new tree with only nodes for which the predicate returned `true`. Returns `null` if the root node is filtered out. The original structure is not mutated.
+
+### Example
+```typescript
+import { filterEachNode } from 'tiptap-utility';
+
+const json = editor.getJSON();
+
+// Remove all image nodes from the document
+const withoutImages = filterEachNode(json, (node) => node.type !== 'image');
+
+// Keep only block-level nodes (e.g. for a plain-text outline)
+const blocksOnly = filterEachNode(json, (node) =>
+  ['paragraph', 'heading', 'blockquote', 'listItem'].includes(node.type ?? '')
+);
 ```
 
 ---
