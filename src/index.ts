@@ -15,6 +15,7 @@ import { getNodeUsageCount } from './getNodeUsageCount';
 import { getMarksAtPos } from './getMarksAtPos';
 import { getMarksBetween } from './getMarksBetween';
 import { findParentNodeWithChildrenAtPos } from './findParentNodeWithChildrenAtPos';
+import { mapEachNode } from './mapEachNode';
 
 const TiptapUtility = {
     isTextSelected,
@@ -33,7 +34,8 @@ const TiptapUtility = {
     getNodeUsageCount,
     getMarksAtPos,
     getMarksBetween,
-    findParentNodeWithChildrenAtPos
+    findParentNodeWithChildrenAtPos,
+    mapEachNode
 }
 
 export {
@@ -53,6 +55,7 @@ export {
     getNodeUsageCount,
     getMarksAtPos,
     getMarksBetween,
-    findParentNodeWithChildrenAtPos
+    findParentNodeWithChildrenAtPos,
+    mapEachNode
 };
 export default TiptapUtility;
