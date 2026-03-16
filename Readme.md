@@ -18,11 +18,12 @@ npm install tiptap-utility
 - [getAllNodesOfType](#getallnodesoftype)
 - [getAllNodesByTypeAndAttrs](#getallnodesbytypeandattrs)
 - [getAllMarksByTypeAndAttrs](#getallmarksbytypeandattrs)
-- [findParentNodeOfTypeAtPosition](#getallnodesoftype)
+- [findParentNodeOfTypeAtPosition](#findparentnodeoftypeatposition)
 - [getEditorState](#geteditorstate)
 - [getNodesInRange](#getnodesinrange)
 - [getLastChildNode](#getlastchildnode)
 - [getNextSiblingNode](#getnextsiblingnode)
+- [mapEachNode](#mapeachnode)
 
 ## `isTextSelected`
 
@@ -311,6 +312,42 @@ if (parentNode && currentNode) {
 }
 ```
 
+---
+## `mapEachNode`
+
+Recursively traverses a Tiptap `JSONContent` node tree and applies a callback to each node. Useful for transforming or inspecting every node in a document (e.g. changing node types, stripping marks, or collecting stats). The tree is traversed in place; the callback can return a modified or replaced node.
+
+### Parameters
+- **`node`** *(required)*: A Tiptap `JSONContent` object (e.g. from `editor.getJSON()` or a single node).
+- **`callback`** *(required)*: A function `(node: JSONContent) => JSONContent` called for each node that has a `type` property. Return the same or a modified node; that value is used for that node in the tree.
+
+### Returns
+- **`JSONContent`**: The root node after applying the callback to it and recursively to all descendants. The original structure is mutated.
+
+### Example
+```typescript
+import { mapEachNode } from 'tiptap-utility';
+
+const json = editor.getJSON();
+
+// Example: ensure every paragraph has an empty attrs object
+const normalized = mapEachNode(json, (node) => {
+  if (node.type === 'paragraph' && !node.attrs) {
+    return { ...node, attrs: {} };
+  }
+  return node;
+});
+
+// Example: collect all node types (inspect only)
+const types: string[] = [];
+mapEachNode(json, (node) => {
+  if (node.type) types.push(node.type);
+  return node;
+});
+console.log('Node types in document:', types);
+```
+
+---
 
 ## License
 
