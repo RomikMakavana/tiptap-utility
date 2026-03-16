@@ -33,6 +33,6 @@
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0"
+    "@tiptap/core": "^2.0.0 || ^3.0.0"
   }
 }
